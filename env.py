@@ -6,15 +6,18 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 import sys 
+import time
+
+sys.path.append('util/')
+
 from agent import Agent
 from qn import QNetwork
-import time
+
 
 TRAIN = int(sys.argv[1])
 print("Train : {}".format(TRAIN))
 
-time.sleep(1)
-env = UnityEnvironment(file_name="Banana.app", base_port=64738, worker_id=2, seed=1)
+env = UnityEnvironment(file_name="Banana.app", base_port=64738, worker_id=3, seed=1)
 
 # get the default brain
 brain_name = env.brain_names[0]
@@ -64,12 +67,14 @@ if TRAIN == 1:
             score += reward
             if done:
                 break 
+                
         scores_window.append(score)       # save most recent score
         scores.append(score)              # save most recent score
         eps = max(eps_end, eps_decay*eps) # decrease epsilon
         print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)), end="")
         if i_episode % 100 == 0:
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)))
+            
         if np.mean(scores_window)>=17.0:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, np.mean(scores_window)))
             torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
