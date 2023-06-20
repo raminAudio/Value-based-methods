@@ -5,7 +5,9 @@ Ramin Anushiravani
 
 ### Introduction
 
-This repo contains a value-base method for the banana navigation challenge on Mac. You can train the agent by running "python env.py 1" and you can see the smart agent navigate the banana field by running "python env.py 0". The same code is also included in "Navigation.ipynb", I had problems with running the environment locally, so I run the python script "env.py" instead. 
+This repo contains a value-base method for the banana navigation challenge on Mac. You can train the agent by running "python env.py 1" and you can see the smart agent navigate the banana field by running "python env.py 0". 
+
+The same code is also included in "Navigation.ipynb", I had problems with running the environment locally, so I run the python script "env.py" instead. I included the report of the notebook "report.html" as well.  
 
 ### You need
 
