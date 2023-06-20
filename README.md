@@ -25,10 +25,10 @@ Inside "util/" there are three scripts:
 
 The final model is saved in the "artifat/checkpoint.pth" along with the plot of all rewards over all episodes "artifact/scores.png" which exceeds 14. 
 
-![plot](artifacts/scores.png)
+![plot](artifact/scores.png)
 
 
-You can see a short video of the smart agent looking for yellow bananas "artifacts/smart_banana.mov"
+You can see a short video of the smart agent looking for yellow bananas "artifact/smart_banana.mov"
 
 
 
