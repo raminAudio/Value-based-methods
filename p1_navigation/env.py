@@ -83,18 +83,17 @@ if TRAIN == 1:
     plt.ylabel('Score')
     plt.xlabel('Episode #')
     plt.show()
-    fig.savefig('scores.png', dpi=fig.dpi)
+    fig.savefig('artifact/scores.png', dpi=fig.dpi)
 
-    torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
+    torch.save(agent.qnetwork_local.state_dict(), 'artifact/checkpoint.pth')
     
     env.close()
 
 else: 
     print("Smart Agent")
     # Uncooment this for smart agent visuazliation 
-    import time
     eps = 0.8
-    agent.qnetwork_local.load_state_dict(torch.load('checkpoint.pth'))
+    agent.qnetwork_local.load_state_dict(torch.load('artifact/checkpoint.pth'))
     for i in range(3):
         env_info = env.reset(train_mode=True)[brain_name]
         state = env_info.vector_observations[0]
