@@ -9,7 +9,7 @@ This repo contains a value-base method for the banana navigation challenge on Ma
 
 ### You need
 
-[Banana.app](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)\\
+[Banana.app](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
 
 Install dependencies,  pip -r requirements.txt
 
